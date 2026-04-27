@@ -21,3 +21,21 @@ def guardar_dado(dadosRolados, dadosEstoque, dadoGuardar):
 
     return [novosRolados, novoEstoque]
 
+def remover_dado(dadosRolados, dadosEstoque, dadoRemover):
+    novosRolados = []
+    novoEstoque = []
+    for i in dadosRolados:
+        novosRolados.append(i)
+    novosRolados.append(dadosEstoque[dadoRemover])
+    # cria a nova lista de dados rolados e adiciona o dado que será removido do estoque
+
+    for i in range(len(dadosEstoque)):
+        if i != dadoRemover:
+            novoEstoque.append(dadosEstoque[i])
+    # cria um novo estoque sem o dado removido
+
+    return [novosRolados, novoEstoque]
+
+
+
+    
