@@ -145,6 +145,17 @@ def calcula_pontos_regra_avancada(listaDados):
 
     return pontuacoes
 
+def faz_jogada(listaDados, categoria, cartela):
+    if categoria in ['1','2','3','4','5','6']:
+        cartela['regra_simples'][int(categoria)] = calcula_pontos_regra_simples(listaDados)[int(categoria)]
+    # se a categoria for simples, altera o valor do dicionário regra simples do dicionario cartela
+
+    elif categoria in ['sem_combinacao','quadra','full_house','sequencia_baixa','sequencia_alta','cinco_iguais']:
+        cartela['regra_avancada'][categoria] = calcula_pontos_regra_avancada(listaDados)[categoria]
+    # se a categoria for avançada, altera o valor do dicionário regra avançada do dicionario cartela
+    return cartela
+
+
 
 
 
