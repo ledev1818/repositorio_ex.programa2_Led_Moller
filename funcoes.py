@@ -63,6 +63,15 @@ def calcula_pontos_sequencia_baixa(listaDados):
     
     return 0
 
+def calcula_pontos_sequencia_alta(listaDados):
+    if 1 in listaDados and 2 in listaDados and 3 in listaDados and 4 in listaDados and 5 in listaDados:
+        return 30
+    elif 2 in listaDados and 3 in listaDados and 4 in listaDados and 5 in listaDados and 6 in listaDados:
+        return 30
+
+    return 0
+
+
 
 
 
