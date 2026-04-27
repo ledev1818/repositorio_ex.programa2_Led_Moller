@@ -47,6 +47,13 @@ def calcula_pontos_regra_simples(listaDados):
     # adiciona os valores dos dados no diconário
     return pontuacao
 
+def calcula_pontos_soma(listaDados):
+    soma = 0
+    for i in listaDados:
+        soma += i
+    return soma
+
+
 
 
     
