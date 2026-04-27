@@ -132,12 +132,18 @@ def calcula_pontos_quina(listaDados):
     return 0
     # confere se ha alguma repeticao maior ou igual a 4 e retorna o resultado
 
+def calcula_pontos_regra_avancada(listaDados):
+    pontuacoes = {}
 
+    pontuacoes['cinco_iguais'] = calcula_pontos_quina(listaDados)
+    pontuacoes['full_house'] = calcula_pontos_full_house(listaDados)
+    pontuacoes['quadra'] = calcula_pontos_quadra(listaDados)
+    pontuacoes['sem_combinacao'] = calcula_pontos_soma(listaDados)
+    pontuacoes['sequencia_alta'] = calcula_pontos_sequencia_alta(listaDados)
+    pontuacoes['sequencia_baixa'] = calcula_pontos_sequencia_baixa(listaDados)
+    # roda as 5 funcoes e retorna um dicionario com os pontos obtidos em cada uma.
 
-
-    
-
-
+    return pontuacoes
 
 
 
