@@ -79,7 +79,7 @@ def calcula_pontos_full_house(listaDados):
     for i in listaDados:
         if lista1 == []:
             lista1.append(i)
-        elif lista2 == []:
+        elif lista2 == [] and i != lista1[0]:
             lista2.append(i)
         # adiciona um numero dos dados na lista de validação caso a mesma esteja vazia
 
