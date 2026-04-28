@@ -44,20 +44,40 @@ print(imprime_cartela(cartela))
 print(listaDados)
 print(Estoque)
 print(digite1)
+reroladas = 0
 
 while -1 in cartela['regra_simples'] and cartela['regra_avancada']:
+    print(listaDados)
+    print(Estoque)
+    print(digite1)
     acao = int(input())
-    if acao not in [0, 1, 2, 3, 4]:
+    if acao not in [0, 1, 2, 3, 4]: 
         print("Opção inválida. Tente novamente.")
-    elif acao == 1:
+
+    elif acao == 1: # segue codigo para a guardar o dado
         print(digiteGuardar)
         dadoGuardar = int(input())
         lista = guardar_dado(listaDados, Estoque, dadoGuardar)
         listaDados = lista[0]
         Estoque = lista[1]
-        print(listaDados)
-        print(Estoque)
-        print(digite1)
+
+    elif acao == 2: # segue o codigo para remover um dado do estoque
+        print(digiteRemover)
+        dadoRemover = int(input())
+        lista = remover_dado(listaDados, Estoque, dadoRemover)
+        listaDados = lista[0]
+        Estoque = lista[1]
+
+    elif acao == 3: # segue o codigo para rerolagem (após a ação 0, as reroladas devem ser zeradas)
+        if reroladas == 2:
+            print("Você já usou todas as rerrolagens.")
+        else:
+            listaDados = rolar_dados(len(listaDados))
+
+    
+
+
+
 
 
 
