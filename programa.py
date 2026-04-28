@@ -32,6 +32,12 @@ cartela = {
     }
 }
 
+combinacoes = []
+for i, n in cartela.items():
+    for j, k in n.items():
+        combinacoes.append(j)
+# cria uma lista com todas as combinacoes do jogo
+
 digite1 = "Digite 1 para guardar um dado, 2 para remover um dado, 3 para rerrolar, 4 para ver a cartela ou 0 para marcar a pontuação:"
 digiteGuardar = "Digite o índice do dado a ser guardado (0 a 4):"
 digiteRemover = "Digite o índice do dado a ser removido (0 a 4):"
@@ -74,7 +80,32 @@ while -1 in cartela['regra_simples'] and cartela['regra_avancada']:
         else:
             listaDados = rolar_dados(len(listaDados))
 
-    
+    elif acao == 4: 
+        print(imprime_cartela(cartela))
+
+    elif acao == 0:
+        terminada = False
+        listaDados += Estoque
+        while terminada == False:
+            print(digiteCombinacao)
+            combinacao = input()
+            if combinacao in ['1','2','3','4','5','6']:
+                combinacao = int(combinacao)
+
+            if combinacao not in combinacoes:
+                print("Combinação inválida. Tente novamente.")
+            elif combinacao in combinacoes[0:6]:
+                if cartela['regra_simples'][combinacao] == -1:
+                    cartela = faz_jogada(listaDados, combinacao, cartela)
+                else:
+                    print("Essa combinação já foi utilizada.")
+
+            elif combinacao in combinacoes[6:]:
+                if cartela['regra_avancada'][combinacao] == -1:
+                    cartela = faz_jogada(listaDados, combinacao, cartela)
+                else:
+                    print("Essa combinação já foi utilizada.")
+
 
 
 
