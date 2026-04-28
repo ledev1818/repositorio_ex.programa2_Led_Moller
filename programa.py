@@ -85,9 +85,9 @@ while rodada < 12:
     elif acao == '0':
         terminada = False # variavel para determinar se a pontuacao foi computada (combinacao valida nao utilizada)
         listaDados += Estoque # junta todos os dados para pontuar
-
+        print(digiteCombinacao)
         while terminada == False:
-            print(digiteCombinacao)
+            
             combinacao = input('')
             if combinacao in ['1','2','3','4','5','6']:
                 combinacao = int(combinacao)
