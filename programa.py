@@ -55,10 +55,11 @@ while rodada < 12:
     print(f'Dados guardados: {Estoque}')
     print(digite1)
     acao = input('')
-    if acao not in ['0', '1', '2', '3', '4']: 
+    while acao not in ['0', '1', '2', '3', '4']: 
         print("Opção inválida. Tente novamente.")
-
-    elif acao == '1': # segue codigo para a guardar o dado
+        acao = input('')
+        
+    if acao == '1': # segue codigo para a guardar o dado
         print(digiteGuardar)
         dadoGuardar = int(input(''))
         lista = guardar_dado(listaDados, Estoque, dadoGuardar)
